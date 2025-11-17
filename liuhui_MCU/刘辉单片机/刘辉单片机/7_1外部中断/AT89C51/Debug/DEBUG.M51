@@ -1,0 +1,95 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/01/2025  13:51:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+BL51.EXE MAIN.OBJ TO DEBUG.OMF
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  MAIN.OBJ (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  DEBUG.OMF (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     000CH     UNIT         ?C_C51STARTUP
+                    0012H     0001H                  *** GAP ***
+            CODE    0013H     0003H     ABSOLUTE     
+            CODE    0016H     000FH     INBLOCK      ?PR?MAIN?MAIN
+            CODE    0025H     0003H     INBLOCK      ?PR?XIN0?MAIN
+            CODE    0028H     0003H     INBLOCK      ?PR?XIN1?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   DEBUG.OMF (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  DEBUG.OMF (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0025H         PUBLIC        xin0
+  D:0090H         PUBLIC        P1
+  C:0028H         PUBLIC        xin1
+  B:00A8H.7       PUBLIC        EA
+  D:00B8H         PUBLIC        IP
+  C:0016H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/01/2025  13:51:20  PAGE 2
+
+
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  B:00A8H.2       PUBLIC        EX1
+  B:0088H.2       PUBLIC        IT1
+  B:0090H.0       PUBLIC        led1
+  B:0090H.1       PUBLIC        led2
+  -------         PROC          MAIN
+  C:0016H         LINE#         13
+  C:0016H         LINE#         14
+  C:0016H         LINE#         16
+  C:0019H         LINE#         17
+  C:001BH         LINE#         18
+  C:001DH         LINE#         19
+  C:001FH         LINE#         20
+  C:0021H         LINE#         21
+  C:0023H         LINE#         22
+  -------         ENDPROC       MAIN
+  -------         PROC          XIN0
+  C:0025H         LINE#         24
+  C:0025H         LINE#         26
+  C:0027H         LINE#         27
+  -------         ENDPROC       XIN0
+  -------         PROC          XIN1
+  C:0028H         LINE#         28
+  C:0028H         LINE#         30
+  C:002AH         LINE#         31
+  -------         ENDPROC       XIN1
+  -------         ENDMOD        MAIN
+
+Program Size: data=9.0 xdata=0 code=42
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

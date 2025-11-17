@@ -1,0 +1,146 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/25/2021  09:21:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+BL51.EXE MAIN.OBJ TO DEBUG.OMF
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  MAIN.OBJ (MAIN)
+  ..\..\..\..\..\..\..\..\..\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  ..\..\..\..\..\..\..\..\..\KEIL_V5\C51\LIB\C51S.LIB (?C?SLCMP)
+  ..\..\..\..\..\..\..\..\..\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  DEBUG.OMF (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            REG     0008H     0008H     ABSOLUTE     "REG BANK 1"
+            REG     0010H     0008H     ABSOLUTE     "REG BANK 2"
+            DATA    0018H     0008H     UNIT         ?DT?MAIN
+            DATA    0020H     0003H     UNIT         _DATA_GROUP_
+            IDATA   0023H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     000BH     UNIT         ?C_INITSEG
+                    0011H     0002H                  *** GAP ***
+            CODE    0013H     0003H     ABSOLUTE     
+            CODE    0016H     008CH     UNIT         ?C_C51STARTUP
+            CODE    00A2H     0032H     INBLOCK      ?PR?INT0?MAIN
+            CODE    00D4H     0032H     INBLOCK      ?PR?INT1?MAIN
+            CODE    0106H     0021H     INBLOCK      ?PR?MAIN?MAIN
+            CODE    0127H     001AH     INBLOCK      ?PR?DELAY?MAIN
+            CODE    0141H     0016H     UNIT         ?C?LIB_CODE
+
+
+
+OVERLAY MAP OF MODULE:   DEBUG.OMF (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?PR?INT0?MAIN                  0020H    0001H
+  +--> ?PR?DELAY?MAIN
+
+*** NEW ROOT ***************************************************
+
+?PR?INT1?MAIN                  0021H    0001H
+  +--> ?PR?DELAY?MAIN
+
+*** NEW ROOT ***************************************************
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/25/2021  09:21:04  PAGE 2
+
+
+
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                  0022H    0001H
+  +--> ?PR?DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  DEBUG.OMF (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0127H         PUBLIC        delay
+  C:0106H         PUBLIC        main
+  D:0088H         PUBLIC        TCON
+  D:0018H         PUBLIC        led
+  B:00B8H.2       PUBLIC        PX1
+  C:00A2H         PUBLIC        int0
+  C:00D4H         PUBLIC        int1
+  -------         PROC          DELAY
+  -------         DO            
+  D:0082H         SYMBOL        j
+  -------         ENDDO         
+  C:0127H         LINE#         14
+  C:0127H         LINE#         16
+  C:0140H         LINE#         17
+  -------         ENDPROC       DELAY
+  -------         PROC          INT0
+  -------         DO            
+  D:0020H         SYMBOL        i
+  -------         ENDDO         
+  C:00A2H         LINE#         18
+  C:00AFH         LINE#         20
+  C:00B2H         LINE#         21
+  C:00BDH         LINE#         22
+  C:00C6H         LINE#         23
+  C:00C9H         LINE#         24
+  -------         ENDPROC       INT0
+  -------         PROC          INT1
+  -------         DO            
+  D:0021H         SYMBOL        i
+  -------         ENDDO         
+  C:00D4H         LINE#         25
+  C:00E1H         LINE#         27
+  C:00E4H         LINE#         28
+  C:00EFH         LINE#         29
+  C:00F8H         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/25/2021  09:21:04  PAGE 3
+
+
+  C:00FBH         LINE#         31
+  -------         ENDPROC       INT1
+  -------         PROC          MAIN
+  -------         DO            
+  D:0022H         SYMBOL        i
+  -------         ENDDO         
+  C:0106H         LINE#         32
+  C:0106H         LINE#         33
+  C:0106H         LINE#         35
+  C:010EH         LINE#         36
+  C:010EH         LINE#         37
+  C:0111H         LINE#         38
+  C:011CH         LINE#         39
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?SLCMP
+  C:0141H         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+Program Size: data=36.0 xdata=0 code=341
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

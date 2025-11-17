@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\main.o"
+".\delay.o"
+".\gd32f10x_it.o"
+".\systick.o"
+".\gd32f10x_gpio.o"
+".\gd32f10x_misc.o"
+".\gd32f10x_rcu.o"
+".\system_gd32f10x.o"
+".\startup_gd32f10x_md.o"
+".\led.o"
+--strict --scatter ".\LIB-LED.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\LIB-LED.map" -o .\LIB-LED.axf

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\7-2 INE" 
+PRINT(".\Listings\7-2 INE.m51")
